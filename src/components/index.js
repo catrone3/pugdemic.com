@@ -5,7 +5,6 @@ import About from './About';
 import Contact from './Contact';
 import Portfolio from './Portfolio';
 import Shop from './Shop';
-import Socials from './Socials';
 import Footer from './Footer';
 
 export {
@@ -15,6 +14,5 @@ export {
     Contact,
     Portfolio,
     Shop,
-    Socials,
     Footer,
 }

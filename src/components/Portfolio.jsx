@@ -1,5 +1,7 @@
 import React from "react";
 
+import { SectionWrapper } from "../hoc";
+
 const Portfolio = () => {
     return (
         <div>
@@ -8,4 +10,4 @@ const Portfolio = () => {
     )
 }
 
-export default Portfolio
+export default SectionWrapper(Portfolio, "Portfolio");

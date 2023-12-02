@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        WEBSITE_URL = credentials('pugs_website_url')
+    }
     stages {
         stage('Build') {
             steps {
@@ -17,9 +20,9 @@ pipeline {
             steps {
                 echo 'Deploying..'
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    echo 'aws code placehodler'
+                    echo "The url is ${WEBSITE_URL}"
+                    // sh 'aws s3 sync --delete ./dist s3://${WEBSITE_URL}'
                 }
-                
             }
         }
     }
